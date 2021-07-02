@@ -26,5 +26,8 @@
   },
   "bugs": {
     "url": "https://github.com/actionsflow/actionsflow-workflow-default/issues"
+  },
+  "dependencies": {
+    "mc-curseforge-api": "^2.2.3"
   }
 }

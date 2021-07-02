@@ -1,0 +1,15 @@
+on:
+  script:
+    path: ./src/curseforge.js
+    deduplicationKey: id
+jobs:
+  discord:
+    name: send to discord
+    runs-on: ubuntu-latest
+    steps:
+      - name: Actions for Discord
+        uses: Ilshidur/action-discord@0.3.2
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        with: 
+          args: 'new ${{on.script.outputs.release_type}} released: ${{on.script.outputs.file_name}}'
