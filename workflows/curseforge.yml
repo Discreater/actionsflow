@@ -12,4 +12,4 @@ jobs:
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         with: 
-          args: 'new ${{on.script.outputs.release_type}} released: ${{on.script.outputs.file_name}}'
+          args: 'new ${{on.script.outputs.releaseType}} released: ${{on.script.outputs.fileName}}'

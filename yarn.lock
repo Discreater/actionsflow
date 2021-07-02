@@ -2262,11 +2262,6 @@ map-obj@^4.1.0:
   resolved "https://registry.npm.taobao.org/map-obj/download/map-obj-4.2.1.tgz#e4ea399dbc979ae735c83c863dd31bdf364277b7"
   integrity sha1-5Oo5nbyXmuc1yDyGPdMb3zZCd7c=
 
-mc-curseforge-api@^2.2.3:
-  version "2.2.3"
-  resolved "https://registry.nlark.com/mc-curseforge-api/download/mc-curseforge-api-2.2.3.tgz#91587893605e4dcd0a37de466d0b847a3d787484"
-  integrity sha1-kVh4k2BeTc0KN95GbQuEej14dIQ=
-
 media-typer@0.3.0:
   version "0.3.0"
   resolved "https://registry.npm.taobao.org/media-typer/download/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
