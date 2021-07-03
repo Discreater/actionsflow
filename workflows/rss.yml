@@ -15,7 +15,6 @@ jobs:
           echo title: $title
           echo contentSnippet: $contentSnippet
           echo link: $link
-              steps:
       - name: Actions for Discord
         uses: appleboy/discord-action@master
         with: 
