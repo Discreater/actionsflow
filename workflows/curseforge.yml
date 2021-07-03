@@ -1,19 +1,18 @@
 on:
-  # script:
-  #   path: ./src/curseforge.js
-  #   deduplicationKey: id
-  push:
-    branches:
-      - main
+  script:
+    path: ./src/curseforge.js
+    deduplicationKey: id
 jobs:
   discord:
     name: send to discord
     runs-on: ubuntu-latest
     steps:
       - name: Actions for Discord
-        uses: appleboy/discord-action@master
+        uses: rjstone/discord-webhook-notify@v1
         with: 
-          webhook_id: ${{ secrets.WEBHOOK_ID }}
-          webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
-          # message: "new ${{on.script.outputs.releaseType}} released: ${{on.script.outputs.fileName}}"
-          message: "new commit message"
+          serverity: info
+          color: '#ff00aa'
+          description: New ${{ on.script.outputs.releaseType }} released.
+          details: 'File: ${{ on.script.outputs.fileName }} \n Game version: ${{on.script.outputs.gameVersion}} \n Release date: ${{on.script.outputs.fileDate}}'
+          username: Curseforge
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
