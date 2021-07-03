@@ -1,15 +1,19 @@
 on:
-  script:
-    path: ./src/curseforge.js
-    deduplicationKey: id
+  # script:
+  #   path: ./src/curseforge.js
+  #   deduplicationKey: id
+  push:
+    branches:
+      - main
 jobs:
   discord:
     name: send to discord
     runs-on: ubuntu-latest
     steps:
       - name: Actions for Discord
-        uses: Ilshidur/action-discord@0.3.2
-        env:
-          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        uses: appleboy/discord-action@master
         with: 
-          args: 'new ${{on.script.outputs.releaseType}} released: ${{on.script.outputs.fileName}}'
+          webhook_id: ${{ secrets.WEBHOOK_ID }}
+          webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
+          # message: "new ${{on.script.outputs.releaseType}} released: ${{on.script.outputs.fileName}}"
+          message: "new commit message"
