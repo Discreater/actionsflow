@@ -15,3 +15,11 @@ jobs:
           echo title: $title
           echo contentSnippet: $contentSnippet
           echo link: $link
+              steps:
+      - name: Actions for Discord
+        uses: appleboy/discord-action@master
+        with: 
+          webhook_id: ${{ secrets.WEBHOOK_ID }}
+          webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
+          # message: "new ${{on.script.outputs.releaseType}} released: ${{on.script.outputs.fileName}}"
+          message: "new commit message"
