@@ -7,17 +7,21 @@ jobs:
     name: send to discord
     runs-on: ubuntu-latest
     steps:
-      - name: Simple echo
-        env:
-          file: ${{ on.script.outputs.fileName }}
-        run: |
-          echo file: $file
-      # - name: Actions for Discord
-      #   uses: rjstone/discord-webhook-notify@v1
-      #   with: 
-      #     serverity: info
-      #     color: '#ff00aa'
-      #     description: New ${{ on.script.outputs.releaseTypeStr }} released.
-      #     details: 'File: ${{ on.script.outputs.fileName }} \n Game version: ${{on.script.outputs.gameVersion}} \n Release date: ${{on.script.outputs.fileDate}}\nDownload link: ${{on.script.outputs.downloadUrl}}'
-      #     username: Curseforge
-      #     webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+      # - name: Simple echo
+      #   env:
+      #     file: ${{ on.script.outputs.fileName }}
+      #   run: |
+      #     echo file: $file
+      - name: Actions for Discord
+        uses: rjstone/discord-webhook-notify@v1
+        with: 
+          severity: info
+          color: '#ff00aa'
+          description: New ${{ on.script.outputs.releaseTypeStr }}.
+          details: 
+            'File: [${{ on.script.outputs.fileName }}](${{on.script.outputs.downloadUrl}}) 
+             Game version: ${{on.script.outputs.gameVersion}}
+             Release date: ${{on.script.outputs.fileDate}}}'
+          avatarUrl: https://media.forgecdn.net/avatars/130/458/636460205549127215.png
+          username: CurseForge
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
