@@ -16,7 +16,6 @@ jobs:
         uses: rjstone/discord-webhook-notify@v1
         with: 
           severity: info
-          color: '#ff00aa'
           description: New ${{ on.script.outputs.releaseTypeStr }}.
           details: 
             'File: [${{ on.script.outputs.fileName }}](${{on.script.outputs.downloadUrl}}) 
