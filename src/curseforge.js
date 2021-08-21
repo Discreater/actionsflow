@@ -1,7 +1,7 @@
 
 module.exports = async function ({ helpers }) {
     const result = await helpers.axios.get("https://addons-ecs.forgesvc.net/api/v2/addon/242223/files")
-    const data = result.data;
+    const data = Object.assign({}, result.data);
     switch (data.releaseType) {
         case 1:
             data.releaseTypeStr = 'Release';
@@ -16,6 +16,6 @@ module.exports = async function ({ helpers }) {
             data.releaseTypeStr = `Unknow: ${data.releaseType}`;
             break;
     }
-    
+    data.gameVersion = data.gameVersion.join(', ');
     return data;
 }
