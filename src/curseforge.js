@@ -16,6 +16,8 @@ module.exports = async function ({ helpers }) {
             data.releaseTypeStr = `Unknow: ${data.releaseType}`;
             break;
     }
-    data.gameVersion = data.gameVersion.join(', ');
+    if (Array.isArray(data.gameVersion)) {
+        data.gameVersion = data.gameVersion.join(', ');
+    }
     return data;
 }
