@@ -1,6 +1,6 @@
 require("dotenv").config();
 const { WakaTimeClient, RANGE } = require("wakatime-client");
-const Octokit = require("@octokit/rest");
+const { Octokit } = require("@octokit/rest");
 
 const {
   GIST_ID: gistId,
@@ -10,7 +10,7 @@ const {
 
 const wakatime = new WakaTimeClient(wakatimeApiKey);
 
-const octokit = new Octokit({ auth: `token ${githubToken}` });
+const octokit = new Octokit({ auth: `${githubToken}` });
 
 async function main() {
   const stats = await wakatime.getMyStats({ range: RANGE.LAST_7_DAYS });
@@ -25,7 +25,7 @@ function trimRightStr(str, len) {
 async function updateGist(stats) {
   let gist;
   try {
-    gist = await octokit.gists.get({ gist_id: gistId });
+    gist = await octokit.rest.gists.get({ gist_id: gistId });
   } catch (error) {
     console.error(`Unable to get gist\n${error}`);
   }
@@ -50,7 +50,7 @@ async function updateGist(stats) {
   try {
     // Get original filename to update that same file
     const filename = Object.keys(gist.data.files)[0];
-    await octokit.gists.update({
+    await octokit.rest.gists.update({
       gist_id: gistId,
       files: {
         [filename]: {
