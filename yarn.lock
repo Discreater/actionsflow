@@ -162,7 +162,7 @@
   dependencies:
     "@octokit/types" "^6.0.3"
 
-"@octokit/core@^3.0.0", "@octokit/core@^3.1.2":
+"@octokit/core@^3.0.0", "@octokit/core@^3.1.2", "@octokit/core@^3.5.0":
   version "3.5.1"
   resolved "https://registry.nlark.com/@octokit/core/download/@octokit/core-3.5.1.tgz#8601ceeb1ec0e1b1b8217b960a413ed8e947809b"
   integrity sha1-hgHO6x7A4bG4IXuWCkE+2OlHgJs=
@@ -198,12 +198,37 @@
   resolved "https://registry.nlark.com/@octokit/openapi-types/download/@octokit/openapi-types-8.1.4.tgz?cache=0&sync_timestamp=1625074580144&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40octokit%2Fopenapi-types%2Fdownload%2F%40octokit%2Fopenapi-types-8.1.4.tgz#20684667b50176b5d24cdb89799a8a12d38c3775"
   integrity sha1-IGhGZ7UBdrXSTNuJeZqKEtOMN3U=
 
+"@octokit/openapi-types@^9.5.0":
+  version "9.7.0"
+  resolved "https://registry.yarnpkg.com/@octokit/openapi-types/-/openapi-types-9.7.0.tgz#9897cdefd629cd88af67b8dbe2e5fb19c63426b2"
+  integrity sha512-TUJ16DJU8mekne6+KVcMV5g6g/rJlrnIKn7aALG9QrNpnEipFc1xjoarh0PKaAWf2Hf+HwthRKYt+9mCm5RsRg==
+
 "@octokit/plugin-paginate-rest@^2.2.3":
   version "2.13.6"
   resolved "https://registry.nlark.com/@octokit/plugin-paginate-rest/download/@octokit/plugin-paginate-rest-2.13.6.tgz#03633839b0ec57a108d2ca1c4b1f64b749d3506c"
   integrity sha1-A2M4ObDsV6EI0socSx9kt0nTUGw=
   dependencies:
     "@octokit/types" "^6.17.3"
+
+"@octokit/plugin-paginate-rest@^2.6.2":
+  version "2.15.1"
+  resolved "https://registry.yarnpkg.com/@octokit/plugin-paginate-rest/-/plugin-paginate-rest-2.15.1.tgz#264189dd3ce881c6c33758824aac05a4002e056a"
+  integrity sha512-47r52KkhQDkmvUKZqXzA1lKvcyJEfYh3TKAIe5+EzMeyDM3d+/s5v11i2gTk8/n6No6DPi3k5Ind6wtDbo/AEg==
+  dependencies:
+    "@octokit/types" "^6.24.0"
+
+"@octokit/plugin-request-log@^1.0.2":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@octokit/plugin-request-log/-/plugin-request-log-1.0.4.tgz#5e50ed7083a613816b1e4a28aeec5fb7f1462e85"
+  integrity sha512-mLUsMkgP7K/cnFEw07kWqXGF5LKrOkD+lhCrKvPHXWDywAwuDUeDwWBpc69XK3pNX0uKiVt8g5z96PJ6z9xCFA==
+
+"@octokit/plugin-rest-endpoint-methods@5.8.0":
+  version "5.8.0"
+  resolved "https://registry.yarnpkg.com/@octokit/plugin-rest-endpoint-methods/-/plugin-rest-endpoint-methods-5.8.0.tgz#33b342fe41f2603fdf8b958e6652103bb3ea3f3b"
+  integrity sha512-qeLZZLotNkoq+it6F+xahydkkbnvSK0iDjlXFo3jNTB+Ss0qIbYQb9V/soKLMkgGw8Q2sHjY5YEXiA47IVPp4A==
+  dependencies:
+    "@octokit/types" "^6.25.0"
+    deprecation "^2.3.1"
 
 "@octokit/plugin-rest-endpoint-methods@^4.0.0":
   version "4.15.1"
@@ -234,12 +259,29 @@
     node-fetch "^2.6.1"
     universal-user-agent "^6.0.0"
 
+"@octokit/rest@^18.9.1":
+  version "18.9.1"
+  resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-18.9.1.tgz#db1d7ac1d7b10e908f7d4b78fe35a392554ccb26"
+  integrity sha512-idZ3e5PqXVWOhtZYUa546IDHTHjkGZbj3tcJsN0uhCy984KD865e8GB2WbYDc2ZxFuJRiyd0AftpL2uPNhF+UA==
+  dependencies:
+    "@octokit/core" "^3.5.0"
+    "@octokit/plugin-paginate-rest" "^2.6.2"
+    "@octokit/plugin-request-log" "^1.0.2"
+    "@octokit/plugin-rest-endpoint-methods" "5.8.0"
+
 "@octokit/types@^6.0.3", "@octokit/types@^6.13.0", "@octokit/types@^6.16.1", "@octokit/types@^6.17.3":
   version "6.17.4"
   resolved "https://registry.nlark.com/@octokit/types/download/@octokit/types-6.17.4.tgz#5ec011bfe3d08b7605c7d92a15796c470ee541b6"
   integrity sha1-XsARv+PQi3YFx9kqFXlsRw7lQbY=
   dependencies:
     "@octokit/openapi-types" "^8.1.4"
+
+"@octokit/types@^6.24.0", "@octokit/types@^6.25.0":
+  version "6.25.0"
+  resolved "https://registry.yarnpkg.com/@octokit/types/-/types-6.25.0.tgz#c8e37e69dbe7ce55ed98ee63f75054e7e808bf1a"
+  integrity sha512-bNvyQKfngvAd/08COlYIN54nRgxskmejgywodizQNyiKoXmWRAjKup2/LYwm+T9V0gsKH6tuld1gM0PzmOiB4Q==
+  dependencies:
+    "@octokit/openapi-types" "^9.5.0"
 
 "@sindresorhus/is@^0.14.0":
   version "0.14.0"
@@ -804,8 +846,8 @@ axios-retry@^3.1.9:
 
 axios@^0.21.1:
   version "0.21.1"
-  resolved "https://registry.npm.taobao.org/axios/download/axios-0.21.1.tgz?cache=0&sync_timestamp=1608611162952&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Faxios%2Fdownload%2Faxios-0.21.1.tgz#22563481962f4d6bde9a76d516ef0e5d3c09b2b8"
-  integrity sha1-IlY0gZYvTWvemnbVFu8OXTwJsrg=
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.1.tgz#22563481962f4d6bde9a76d516ef0e5d3c09b2b8"
+  integrity sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==
   dependencies:
     follow-redirects "^1.10.0"
 
@@ -1240,6 +1282,11 @@ dot-prop@^5.2.0:
   integrity sha1-kMzOcIzZzYLMTcjD3dmr3VWyDog=
   dependencies:
     is-obj "^2.0.0"
+
+dotenv@^10.0.0:
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-10.0.0.tgz#3d4227b8fb95f81096cdd2b66653fb2c7085ba81"
+  integrity sha512-rlBi9d8jpv9Sf1klPjNfFAuWDjKLwTIJJ/VxtoTwIR6hnZxcEOQCZg2oIL3MWBYw5GpUDKOEnND7LXTbIpQ03Q==
 
 dotenv@^8.2.0:
   version "8.6.0"
@@ -3146,6 +3193,11 @@ verror@1.10.0:
     assert-plus "^1.0.0"
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
+
+wakatime-client@^2.7.0:
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/wakatime-client/-/wakatime-client-2.7.0.tgz#a95f0999376c8eddb89ede99e685c2e62b007868"
+  integrity sha512-8evdA2P5mKrTHWqVHiQ7X43wQCyZGgfVxlS/r+aypSBXVtM32tfjMjbNNowR6wzfmB5yFjDjxcxPFOYROi476w==
 
 which-boxed-primitive@^1.0.2:
   version "1.0.2"

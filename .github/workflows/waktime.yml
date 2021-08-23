@@ -1,0 +1,24 @@
+name: Update gist with WakaTime stats
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  push:
+    branches:
+      - main
+jobs:
+  update-gist:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.4.0
+        with:
+          node-version: '14'
+          cache: 'yarn'
+      - run: yarn install
+      - name: Update gist
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GIST_ID: 288731522fc96aa414cb0583aba890c8
+          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
+        run: node ./src/wakatime.js
