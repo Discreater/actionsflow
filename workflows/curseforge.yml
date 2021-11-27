@@ -12,13 +12,16 @@ jobs:
       #     file: ${{ on.script.outputs.fileName }}
       #   run: |
       #     echo file: $file
-      - name: Actions for Discord
-        uses: rjstone/discord-webhook-notify@v1
-        with: 
-          severity: info
-          description: 
-          details: 
-            '# New ${{ on.script.outputs.releaseTypeStr }}.
+      - name: Discord Message Notify
+        uses: appleboy/discord-action@0.0.3
+        with:
+          webhook_id: ${{ secrets.WEBHOOK_ID }}
+          webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
+          username: CurseForge
+          avatar_url: https://media.forgecdn.net/avatars/130/458/636460205549127215.png
+          color: "#238636"
+          message: 
+            "# New ${{ on.script.outputs.releaseTypeStr }}.
 
              ## Minecraft Versions
              ${{ on.srcipt.outputs.gameVersion }}
@@ -31,7 +34,27 @@ jobs:
              ## Links
              [Curseforge](${{on.script.outputs.downloadUrl}})
              ---
-             Release date: ${{on.script.outputs.fileDate}}'
-          avatarUrl: https://media.forgecdn.net/avatars/130/458/636460205549127215.png
-          username: CurseForge
-          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+             Release date: ${{on.script.outputs.fileDate}}"
+      # - name: Actions for Discord
+      #   uses: rjstone/discord-webhook-notify@v1
+      #   with: 
+      #     severity: info
+      #     description: 
+      #     details: 
+      #       '# New ${{ on.script.outputs.releaseTypeStr }}.
+
+      #        ## Minecraft Versions
+      #        ${{ on.srcipt.outputs.gameVersion }}
+
+      #        ## Mod Version
+      #        ${{ on.script.outputs.fileName }}
+
+      #        ## Type
+
+      #        ## Links
+      #        [Curseforge](${{on.script.outputs.downloadUrl}})
+      #        ---
+      #        Release date: ${{on.script.outputs.fileDate}}'
+      #     avatarUrl: https://media.forgecdn.net/avatars/130/458/636460205549127215.png
+      #     username: CurseForge
+      #     webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
